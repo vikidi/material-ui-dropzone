@@ -17,5 +17,43 @@
         "code": 22114
       }
     }
+  },
+  "dist\\index.js": {
+    "bundled": 55510,
+    "minified": 25451,
+    "gzipped": 6057
+  },
+  "dist\\index.es.js": {
+    "bundled": 54312,
+    "minified": 24427,
+    "gzipped": 5937,
+    "treeshaked": {
+      "rollup": {
+        "code": 17779,
+        "import_statements": 1582
+      },
+      "webpack": {
+        "code": 21310
+      }
+    }
+  },
+  "index.js": {
+    "bundled": 55788,
+    "minified": 25553,
+    "gzipped": 6110
+  },
+  "index.es.js": {
+    "bundled": 54562,
+    "minified": 24715,
+    "gzipped": 5953,
+    "treeshaked": {
+      "rollup": {
+        "code": 18384,
+        "import_statements": 1548
+      },
+      "webpack": {
+        "code": 20990
+      }
+    }
   }
 }

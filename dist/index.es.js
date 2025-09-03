@@ -13,7 +13,7 @@ import * as React from 'react';
 import { Fragment } from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import Typography from '@mui/material/Typography';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { withStyles } from '@mui/styles';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
@@ -30,7 +30,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import ErrorIcon from '@mui/icons-material/Error';
 import InfoIcon from '@mui/icons-material/Info';
 import WarningIcon from '@mui/icons-material/Warning';
-import Button$1 from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -291,32 +290,32 @@ var styles = function styles(_ref) {
     shape = _ref.shape,
     spacing = _ref.spacing;
   return {
-    '@keyframes progress': {
-      '0%': {
-        backgroundPosition: '0 0'
+    "@keyframes progress": {
+      "0%": {
+        backgroundPosition: "0 0"
       },
-      '100%': {
-        backgroundPosition: '-70px 0'
+      "100%": {
+        backgroundPosition: "-70px 0"
       }
     },
     root: {
-      position: 'relative',
-      width: '100%',
-      minHeight: '250px',
+      position: "relative",
+      width: "100%",
+      minHeight: "250px",
       backgroundColor: palette.background.paper,
-      border: 'dashed',
+      border: "dashed",
       borderColor: palette.divider,
       borderRadius: shape.borderRadius,
-      boxSizing: 'border-box',
-      cursor: 'pointer',
-      overflow: 'hidden'
+      boxSizing: "border-box",
+      cursor: "pointer",
+      overflow: "hidden"
     },
     active: {
-      animation: '$progress 2s linear infinite !important',
+      animation: "$progress 2s linear infinite !important",
       // eslint-disable-next-line max-len
       backgroundImage: "repeating-linear-gradient(-45deg, ".concat(palette.background.paper, ", ").concat(palette.background.paper, " 25px, ").concat(palette.divider, " 25px, ").concat(palette.divider, " 50px)"),
-      backgroundSize: '150% 100%',
-      border: 'solid',
+      backgroundSize: "150% 100%",
+      border: "solid",
       borderColor: palette.primary.light
     },
     invalid: {
@@ -325,7 +324,7 @@ var styles = function styles(_ref) {
       borderColor: palette.error.main
     },
     textContainer: {
-      textAlign: 'center'
+      textAlign: "center"
     },
     text: {
       marginBottom: spacing(3),
@@ -337,14 +336,14 @@ var styles = function styles(_ref) {
       color: palette.text.primary
     },
     resetButton: {
-      display: 'block',
-      margin: '10px 0'
+      display: "block",
+      margin: "10px 0"
     }
   };
 };
 var defaultSnackbarAnchorOrigin = {
-  horizontal: 'left',
-  vertical: 'bottom'
+  horizontal: "left",
+  vertical: "bottom"
 };
 var defaultGetPreviewIcon = function defaultGetPreviewIcon(fileObject, classes) {
   if (isImage(fileObject.file)) {
@@ -372,8 +371,8 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
     _this = _callSuper$3(this, DropzoneAreaBase, [].concat(args));
     _this.state = {
       openSnackBar: false,
-      snackbarMessage: '',
-      snackbarVariant: 'success'
+      snackbarMessage: "",
+      snackbarVariant: "success"
     };
     _this.handleDropAccepted = /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime.mark(function _callee2(acceptedFiles, evt) {
@@ -389,7 +388,7 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
               _this.setState({
                 openSnackBar: true,
                 snackbarMessage: getFileLimitExceedMessage(filesLimit),
-                snackbarVariant: 'error'
+                snackbarVariant: "error"
               }, _this.notifyAlert);
               return _context2.abrupt("return");
             case 1:
@@ -434,11 +433,11 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
               // Display message
               message = fileObjs.reduce(function (msg, fileObj) {
                 return msg + getFileAddedMessage(fileObj.file.name);
-              }, '');
+              }, "");
               _this.setState({
                 openSnackBar: true,
                 snackbarMessage: message,
-                snackbarVariant: 'success'
+                snackbarVariant: "success"
               }, _this.notifyAlert);
             case 3:
             case "end":
@@ -459,7 +458,7 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
         getFileLimitExceedMessage = _this$props2.getFileLimitExceedMessage,
         maxFileSize = _this$props2.maxFileSize,
         onDropRejected = _this$props2.onDropRejected;
-      var message = '';
+      var message = "";
       if (fileObjects.length + rejectedFiles.length > filesLimit) {
         message = getFileLimitExceedMessage(filesLimit);
       } else {
@@ -473,7 +472,7 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
       _this.setState({
         openSnackBar: true,
         snackbarMessage: message,
-        snackbarVariant: 'error'
+        snackbarVariant: "error"
       }, _this.notifyAlert);
     };
     _this.handleRemove = function (fileIndex) {
@@ -494,7 +493,7 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
         _this.setState({
           openSnackBar: true,
           snackbarMessage: getFileRemovedMessage(removedFileObj.file.name),
-          snackbarVariant: 'info'
+          snackbarVariant: "info"
         }, _this.notifyAlert);
       };
     };
@@ -552,7 +551,7 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
         openSnackBar = _this$state2.openSnackBar,
         snackbarMessage = _this$state2.snackbarMessage,
         snackbarVariant = _this$state2.snackbarVariant;
-      var acceptFiles = acceptedFiles === null || acceptedFiles === void 0 ? void 0 : acceptedFiles.join(',');
+      var acceptFiles = acceptedFiles === null || acceptedFiles === void 0 ? void 0 : acceptedFiles.join(",");
       var isMultiple = filesLimit > 1;
       var previewsVisible = showPreviews && fileObjects.length > 0;
       var previewsInDropzoneVisible = showPreviewsInDropzone && fileObjects.length > 0;
@@ -593,7 +592,7 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
         onClick: reset.onClick,
         variant: "outlined",
         className: classes.resetButton
-      }, reset.text || 'reset')), previewsVisible && /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement(Typography, {
+      }, reset.text || "reset")), previewsVisible && /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement(Typography, {
         variant: "subtitle1",
         component: "span"
       }, previewText), /*#__PURE__*/React.createElement(PreviewList$1, {
@@ -605,7 +604,7 @@ var DropzoneAreaBase = /*#__PURE__*/function (_React$PureComponent) {
         previewChipProps: previewChipProps,
         previewGridClasses: previewGridClasses,
         previewGridProps: previewGridProps
-      })), (typeof showAlerts === 'boolean' && showAlerts || Array.isArray(showAlerts) && showAlerts.includes(snackbarVariant)) && /*#__PURE__*/React.createElement(Snackbar, _extends({
+      })), (typeof showAlerts === "boolean" && showAlerts || Array.isArray(showAlerts) && showAlerts.includes(snackbarVariant)) && /*#__PURE__*/React.createElement(Snackbar, _extends({
         anchorOrigin: defaultSnackbarAnchorOrigin,
         autoHideDuration: 6000
       }, alertSnackbarProps, {
@@ -624,8 +623,8 @@ DropzoneAreaBase.defaultProps = {
   filesLimit: 3,
   fileObjects: [],
   maxFileSize: 3000000,
-  dropzoneText: 'Drag and drop a file here or click',
-  previewText: 'Preview:',
+  dropzoneText: "Drag and drop a file here or click",
+  previewText: "Preview:",
   disableRejectionFeedback: false,
   showPreviews: false,
   // By default previews show up under in the dialog and inside in the standalone
@@ -640,8 +639,8 @@ DropzoneAreaBase.defaultProps = {
   showAlerts: true,
   alertSnackbarProps: {
     anchorOrigin: {
-      horizontal: 'left',
-      vertical: 'bottom'
+      horizontal: "left",
+      vertical: "bottom"
     },
     autoHideDuration: 6000
   },
@@ -658,10 +657,10 @@ DropzoneAreaBase.defaultProps = {
   getDropRejectMessage: function getDropRejectMessage(rejectedFile, acceptedFiles, maxFileSize) {
     var message = "File ".concat(rejectedFile.name, " was rejected. ");
     if (!acceptedFiles.includes(rejectedFile.type)) {
-      message += 'File type not supported. ';
+      message += "File type not supported. ";
     }
     if (rejectedFile.size > maxFileSize) {
-      message += 'File is too big. Size limit is ' + convertBytesToMbsOrKbs(maxFileSize) + '. ';
+      message += "File is too big. Size limit is " + convertBytesToMbsOrKbs(maxFileSize) + ". ";
     }
     return message;
   }
@@ -745,7 +744,7 @@ process.env.NODE_ENV !== "production" ? DropzoneAreaBase.propTypes = {
    *  - showAlerts={['error', 'success', 'info']} is same as showAlerts={true}.
    *  - showAlerts={[]} is same as showAlerts={false}.
    */
-  showAlerts: PropTypes.oneOfType([PropTypes.bool, PropTypes.arrayOf(PropTypes.oneOf(['error', 'success', 'info']))]),
+  showAlerts: PropTypes.oneOfType([PropTypes.bool, PropTypes.arrayOf(PropTypes.oneOf(["error", "success", "info"]))]),
   /**
    * Props to pass to the Material-UI Snackbar components.<br/>Requires `showAlerts` prop to be `true`.
    *
@@ -843,7 +842,7 @@ process.env.NODE_ENV !== "production" ? DropzoneAreaBase.propTypes = {
   onAlert: PropTypes.func
 } : void 0;
 var DropzoneAreaBase$1 = withStyles(styles, {
-  name: 'MuiDropzoneArea'
+  name: "MuiDropzoneArea"
 })(DropzoneAreaBase);
 
 var _excluded$1 = ["clearOnUnmount", "initialFiles", "onChange", "onDelete"];
@@ -1130,10 +1129,10 @@ var DropzoneDialogBase = /*#__PURE__*/function (_React$PureComponent) {
         maxWidth: maxWidth,
         onClose: onClose,
         open: open
-      }), /*#__PURE__*/React.createElement(DialogTitle, null, dialogTitle), /*#__PURE__*/React.createElement(DialogContent, null, /*#__PURE__*/React.createElement(DropzoneAreaBase$1, dropzoneAreaProps)), /*#__PURE__*/React.createElement(DialogActions, null, /*#__PURE__*/React.createElement(Button$1, {
+      }), /*#__PURE__*/React.createElement(DialogTitle, null, dialogTitle), /*#__PURE__*/React.createElement(DialogContent, null, /*#__PURE__*/React.createElement(DropzoneAreaBase$1, dropzoneAreaProps)), /*#__PURE__*/React.createElement(DialogActions, null, /*#__PURE__*/React.createElement(Button, {
         color: "primary",
         onClick: onClose
-      }, cancelButtonText), /*#__PURE__*/React.createElement(Button$1, {
+      }, cancelButtonText), /*#__PURE__*/React.createElement(Button, {
         color: "primary",
         disabled: submitDisabled,
         onClick: onSave
